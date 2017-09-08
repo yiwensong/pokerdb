@@ -11,5 +11,5 @@ SELECT sng_results.id,
   sng_prizes.prize
 FROM ((sng_results
 INNER JOIN sng_types ON sng_results.sng_id = sng_types.id)
-INNER JOIN sng_prizes ON sng_prizes.sng_id = sng_results.sng_id
+LEFT JOIN sng_prizes ON sng_prizes.sng_id = sng_results.sng_id
   AND sng_prizes.place = sng_results.place);
