@@ -1,3 +1,19 @@
 body, html {
   font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 }
+.success {
+  font-size: larger;
+  color: #4A9130;
+}
+a:visited {
+  color: #403075;
+}
+a:link {
+  color: #403075;
+}
+a:hover {
+  color: #403075;
+}
+a:active {
+  color: #403075;
+}

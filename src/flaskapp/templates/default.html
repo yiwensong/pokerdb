@@ -7,9 +7,19 @@
   {% endblock %}
 </head>
 <body>
+  <div class="navbar">
+    <a href="/">Home</a> |
+    <a href="/add_result">New Result</a> |
+    <a href="/tournaments">Add New Tournaments</a>
+  </div>
   <div id="content">{% block content %}{% endblock %}</div>
+  {% if success %}
+    <br /> <br /> <br />
+    <div class='success'> Success! </div>
+  {% endif %}
   <div id="footer">
     {% block footer %}
+    <br /> <br />
     &copy; Copyright 2017 by <a href="http://defdonthire.me/">yiwen</a>.
     {% endblock %}
 </body>

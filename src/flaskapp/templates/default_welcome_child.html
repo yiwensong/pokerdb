@@ -1,0 +1,24 @@
+{% extends "default.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+  <h1> Summary </h1>
+  {% if data %}
+  <div class="stats">
+    Played: {{ data.games_played }} <br />
+    Cashed: {{ data.cashed_percent }}% <br />
+    Total BI: ${{ data.total_buyin }} <br />
+    Total Cash: ${{ data.total_cash }} <br />
+    Rake: ${{ data.rake }} <br />
+    PL: ${{ data.pl }} <br />
+    EV: ${{ data.ev }} <br />
+    Dev: ${{ data.dev }} <br />
+    Sharpe: {{ data.sharpe }} <br />
+    ROI: {{ data.ROI }}% <br /> <br />
+    Today PL: ${{ data.today_pl }} <br />
+    Yestd PL: ${{ data.yesterday_pl }} <br />
+  </div>
+  {% endif %}
+{% endblock %}

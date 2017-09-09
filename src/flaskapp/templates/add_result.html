@@ -1,0 +1,18 @@
+{% extends "default.html" %}
+{% block title %}Add Tournament{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+  <h1> Add Result </h1>
+  <form action="/add_result" method="post">
+    Tournament:
+    <select name="sng_id">
+      {% for item in tournaments %}
+        <option value="{{ item.id }}">{{ item.name }}</option>
+      {% endfor %}
+    </select> <br />
+    Place: <input type="text" name="place" /> <br />
+    <input type="submit" value="Submit" />
+  </form>
+{% endblock %}

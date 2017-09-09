@@ -25,6 +25,7 @@ def query(statement, con=None, params=None):
     return table
 
 def run_sql_file(sql_fname, con=None):
+    """Runs a sql config file."""
     if con is None:
         con = get_connection()
     with open(sql_fname, 'r') as f:
@@ -32,3 +33,25 @@ def run_sql_file(sql_fname, con=None):
     cur = con.cursor()
     cur.execute(sql)
     con.commit()
+
+def insert(tablename, value_dict, con=None):
+    """Does an insert into tablename on cols with value_dict
+    as the map for column to values.
+    """
+    if con is None:
+        con = get_connection()
+    cur = con.cursor()
+    sql = 'INSERT INTO ' + tablename + '('
+    for k in value_dict:
+        sql += k + ', '
+    sql = sql[:-2] + ') VALUES ('
+    for k in value_dict:
+        sql += '%(' + k + ')s, '
+    sql = sql[:-2] + ')'
+    print(sql)
+    try:
+        cur.execute(sql, value_dict)
+    except psycopg2.IntegrityError as e:
+        print('Insertion failed. Error:', e)
+    con.commit()
+

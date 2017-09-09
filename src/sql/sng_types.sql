@@ -1,9 +1,9 @@
 /* sng_types.sql */
-DROP TABLE IF EXISTS sng_types;
+DROP TABLE IF EXISTS sng_types CASCADE;
 CREATE TABLE sng_types (
   id SERIAL,
   date_added DATE,
-  name CHAR(64),
+  name VARCHAR(64),
   buyin float,
   rake float,
   players int,

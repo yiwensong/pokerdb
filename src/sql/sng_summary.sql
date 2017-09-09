@@ -13,4 +13,4 @@ SELECT sng_results.id,
 FROM ((sng_results
 INNER JOIN sng_types ON sng_results.sng_id = sng_types.id)
 LEFT JOIN sng_prizes ON sng_prizes.sng_id = sng_results.sng_id
-  AND sng_prizes.place = sng_results.place);
+  AND sng_prizes.place = sng_results.place) ORDER BY id;

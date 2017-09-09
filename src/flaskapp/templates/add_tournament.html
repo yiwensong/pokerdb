@@ -1,0 +1,23 @@
+{% extends "default.html" %}
+{% block title %}Add Tournament{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+  <h1> Add Tournament </h1>
+  <form action="/tournaments" method="post">
+    Tournament Name: <input type="text" name="name"><br />
+    Tournament Buy-in: <input type="text" name="buyin"><br />
+    Tournament Rake: <input type="text" name="rake"><br />
+    Players:
+    <select name="players">
+      <option value="2">2</option>
+      <option value="6">6</option>
+      <option value="9">9</option>
+      <option value="18">18</option>
+      <option value="27">27</option>
+    </select> <br />
+    Prizes (ordered, separated by comma): <input type="text" name="prizes"><br />
+    <input type="submit" value="Submit">
+  </form>
+{% endblock %}
