@@ -4,7 +4,7 @@ This file is a python api to connect to the database.
 import psycopg2
 import pandas as pd
 
-with open('.secret','r') as f:
+with open('secret','r') as f:
     password = f.readline()
 
 DB_CONFIG = {
