@@ -11,10 +11,10 @@ ADD . /app
 RUN pip3 install -Ur requirements.txt
 
 # Make ports open
-EXPOSE 80
-EXPOSE 8080
-EXPOSE 8000
-EXPOSE 5000
+# EXPOSE 80
+# EXPOSE 8080
+# EXPOSE 8000
+# EXPOSE 5000
 
 # Define env vars
 ENV PYTHONPATH /app/src/
@@ -22,4 +22,4 @@ ENV FLASK_APP /app/src/flaskapp/pokerdb_flask.py
 
 # App start
 # CMD flask run --host=0.0.0.0
-CMD gunicorn -w 4 -b :80 pokerdb_flask:app --chdir src/flaskapp
+CMD gunicorn -w 8 -b 0.0.0.0:$PORT pokerdb_flask:app --chdir src/flaskapp
