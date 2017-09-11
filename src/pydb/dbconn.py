@@ -4,8 +4,8 @@ This file is a python api to connect to the database.
 import psycopg2
 import pandas as pd
 
-with open('secret','r') as f:
-    password = f.readline()
+from secret import password
+
 
 DB_CONFIG = {
   'user': 'postgres',

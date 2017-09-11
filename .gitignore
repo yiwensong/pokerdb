@@ -101,4 +101,4 @@ ENV/
 .mypy_cache/
 
 # DB secrets
-src/pydb/secret
+src/pydb/secret.py
