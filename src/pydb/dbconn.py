@@ -17,7 +17,7 @@ DB_CONFIG = {
 
 def get_connection(db='pltracker'):
     """Returns a connection to the research database."""
-    config = {k:v for k,v in DB_CONFIG.iteritems()}
+    config = {k:v for k,v in DB_CONFIG.items()}
     config['database'] = db
     con = psycopg2.connect(**config)
     return con
