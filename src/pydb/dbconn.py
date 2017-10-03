@@ -15,9 +15,11 @@ DB_CONFIG = {
   'port': 5432,
 };
 
-def get_connection():
+def get_connection(db='pltracker'):
     """Returns a connection to the research database."""
-    con = psycopg2.connect(**DB_CONFIG)
+    config = {k:v for k,v in DB_CONFIG.iteritems()}
+    config['database'] = db
+    con = psycopg2.connect(**config)
     return con
 
 def query(statement, con=None, params=None):
